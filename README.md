@@ -1,2 +1,6 @@
-# Pin-Place
-Pinterest Clone. Pin your favorite places here.
+Pin Place
+==========================
+
+ - Pinterest Clone.
+
+ - Pin your favourite places here.

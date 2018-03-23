@@ -1,0 +1,20 @@
+<div class="formBackground" tabindex="0" ng-keydown="$ctrl.onKeyDown($event)">
+</div>
+<div class="formBox" style="top: 10%; !important; overflow: hidden" tabindex="0" ng-keydown="$ctrl.onKeyDown($event)">
+  <i class="far fa-times-circle close" ng-click="$ctrl.close()"></i>
+  <form name="add">
+    <div style="width:80%; margin: auto; height:300px;" class="text-center">
+      <div style="display: inline-block; line-height: 300px; max-width: 100%">
+        <img style="verticle-align: middle; max-width:100%; max-height:300px;" ng-if="link !== undefined" class="text-center" err-src="https://cdn.glitch.com/36e9827f-439f-4dae-ad24-d561825f7dd8%2Falert.png?1521755364672" ng-src="{{image}}">
+      </div>
+    </div>
+    <label>Title: </label>
+    <br>
+    <input style="width:100%" type="text" name="title" ng-model="title" required>
+    <br>
+    <label>Image Link: </label>
+    <br>
+    <input style="width:100%" type="text" name="link" ng-model="link" required>
+    <button class="btn btn-primary" ng-click="$ctrl.add(add.title.$valid, add.link.$valid)">Add</button>
+  </form>
+</div>

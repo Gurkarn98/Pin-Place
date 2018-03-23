@@ -1,0 +1,37 @@
+<div masonry active class="container-fluid">
+  <h1>
+    Your places
+  </h1>
+  <div class="grid">
+    <div class="gutter-sizer"></div>
+    <div ng-click="$ctrl.showForm()" class="additem text-center grid-item">
+      <p class="addtext">
+        Add your place
+      </p>
+      <h3 class="plus">
+        <i class="fas fa-plus"></i>
+      </h3>
+    </div>
+    <div class="grid-item hide" id="{{pin._id}}" ng-repeat="pin in pins">
+      <div class="color">
+        <img class="image" image ng-src="{{pin.link}}" err-src="https://cdn.glitch.com/36e9827f-439f-4dae-ad24-d561825f7dd8%2Falert.png?1521755364672">
+      </div>
+      <h5 class="text-center">{{pin.title}}</h5>
+      <div class="row infos">
+        <div class="col-sm-4 delete" ng-click="$ctrl.delete(pin)">
+          <p>
+            <i class="far fa-times-circle delete"></i>
+          </p>
+        </div>
+        <div class="col-sm-4 likes">
+          <h6><i class="fas fa-heart"></i> {{pin.voted.length}}</h6>
+        </div>
+        <div class="col-sm-4 reblogged">
+          <h6><i class="fas fa-redo-alt"></i> {{pin.reblogged.length}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4 ng-if="$ctrl.pins.length === 0" class="text-center" style="margin-top: 5%; color: white;font-weight:bold">You haven't added any place yet!</h4>
+</div>
+<add-form ng-show="showForm"></add-form>
