@@ -1,0 +1,30 @@
+<div masonry active class="hompage">
+  <img id="img" class="hide" width="1446" height="73" src="https://cdn.glitch.com/36e9827f-439f-4dae-ad24-d561825f7dd8%2Fhomepage.jpg?1521755622381">
+  <canvas id="canvas" width="1446" height="723" style="width: 90%; height: 50%; margin: auto; display: block">
+  </canvas>
+  <h1>
+    Recent Pins
+  </h1>
+  <div class="grid">
+    <div class="gutter-sizer"></div>
+    <div class="grid-item hide" ng-repeat="pin in $ctrl.pins">
+      <div class="color">
+        <img class="image" image ng-src="{{pin.link}}" err-src="https://cdn.glitch.com/36e9827f-439f-4dae-ad24-d561825f7dd8%2Falert.png?1521755364672">
+      </div>
+      <h5 class="text-center">{{pin.title}}</h5>
+      <div class="{{pin.username === $ctrl.username ? 'row infos cursor' : 'row infos'}}">
+        <div ui-sref="userpins({username:pin.username})" ui-sref-if="{{pin.username}}" class="col-sm-6 delete">
+          <p style="margin-left: 2px">
+            {{pin.username}}
+          </p>
+        </div>
+        <div ng-click="$ctrl.like(pin)" class="col-sm-3 likes">
+          <h6 id="{{pin._id+'votes'}}"><i class="fas fa-heart"></i> {{pin.voted.length}}</h6>
+        </div>
+        <div ng-click="$ctrl.reblog(pin)" class="col-sm-3 reblogged">
+          <h6 id="{{pin._id+'reblogs'}}"><i class="fas fa-redo-alt"></i> {{pin.reblogged.length}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

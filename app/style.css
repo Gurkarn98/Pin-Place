@@ -1,0 +1,210 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  background-color:#333333;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+h1{
+  color: white;
+  border-bottom: 1px solid white;
+}
+footer {
+  z-index: -1;
+  color : white;
+  padding-bottom: 15px;
+  border-top: 1px solid lightgrey;
+}
+.right {
+  float : right;
+}
+.nav:hover{
+  color: #ce0e0e !important;
+  background-color: white;
+  text-decoration: none
+}
+.home:hover{
+  color: white !important;
+  background-color: #ce0e0e;
+}
+.home{
+  margin: 0;
+  padding: 0 !important;
+  font-family: 'Faster One';
+  font-size: 30px
+}
+.nav {
+  color: white;
+  z-index : -1;
+  display: block;
+  padding: 12px;
+  background-color: #ce0e0e;
+  min-height : 48px;
+  margin : 0
+}
+.clicked{
+  color: #ce0e0e;
+  background-color: white;
+  text-decoration: none
+}
+.home {
+  display : inline-block
+}
+nav{
+  background-color: #ce0e0e;
+}
+.nav-group {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ce0e0e;
+}
+@media screen and (min-width: 600px) {
+  .nav.icon {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav:not(.home) {
+    display: none;
+  }
+  .nav.icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav-group .responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav-group .responsive{
+    display: block !important;
+    text-align: left;
+  }
+  .reblogged h6{
+    margin-left: 0px !important;
+  }
+}
+.formBox{
+  overflow: scroll;
+  z-index: 2;
+  background: white;
+  position: absolute;
+  padding: 2%;
+  left: 25%;
+  width: 50%;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+}
+.formBackground{
+  z-index: 1;
+  top: 0%;
+  left: 0%;
+  opacity: 0.8;
+  position: fixed;
+  background: black;
+  width: 100%;
+  min-height: 100%;
+  max-height: 500%  
+}
+.close{
+  position: absolute;
+  right: 10px;
+  top: 10px
+}
+.delete {
+  text-align: center
+} 
+.likes h6 {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center
+}
+.reblogged h6{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  margin-left: -5px;
+  padding: 0;
+  text-align: center
+}
+.likes, .reblogged{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-item {
+  width: 200px;
+  color: #ce0e0e;
+  border: 1px solid #ce0e0e;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  background: white;
+  box-shadow: 0px 0px 10px #ce0e0e inset
+}
+.gutter-sizer{
+  width: 10px
+}
+#render {
+ border : 0px 
+}
+.addtext{
+  font-weight: bold;
+  margin: 0;
+  padding: 0
+}
+.additem{
+  padding: 2%
+}
+.hide {
+  display:none 
+}
+.grid-item img {
+  display: block;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+.grid {
+  margin: auto;
+  margin-top: 1%
+}
+*[ng-click], *[ui-sref]{
+  cursor: pointer
+}
+*[ng-click]:hover:not(.close), *[ui-sref="userpins({username:pin.username})"]:hover {
+  color: #ed7474
+}
+.cursor div{
+  cursor: default !important
+}
+.cursor div:hover{
+  color: #ce0e0e !important
+}
+.homepage{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.view-frame{
+  padding: 0
+}
+.absolute{
+  position: absolute;
+  top: 0;
+  right: 0
+}
+.btn-primary:hover{
+  color: white !important;
+  width: 75%
+}
+.btn-primary{
+  display: block;
+  width: 75%;
+  margin: auto;
+  margin-top: 1%
+}

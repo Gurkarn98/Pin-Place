@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pin Place</title>
+    <meta name="description" content="Pin Place">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="https://cdn.glitch.com/5ba3824f-e7eb-455d-a3ec-d29ff5508570%2F5020-200.png?1521237540201"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js" 
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" 
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="/app.module.js"></script>
+    <script src="/app.run.js"></script>
+    <script src="/app.config.js"></script>
+    <script src="/services/user.service.js"></script>
+    <script src="/services/pin.service.js"></script>
+    <script src="/controller/user.controller.js"></script>
+    <script src="/controller/navbar.controller.js"></script>
+    <script src="/directives/app.directive.js"></script>
+    <script src="/home/home.module.js"></script>
+    <script src="/home/home.component.js"></script>
+    <script src="/mypins/mypins.module.js"></script>
+    <script src="/mypins/mypins.component.js"></script>
+    <script src="/allpins/allpins.module.js"></script>
+    <script src="/allpins/allpins.component.js"></script>
+    <script src="/userpins/userpins.module.js"></script>
+    <script src="/userpins/userpins.component.js"></script>
+    <script src="/addForm/addForm.module.js"></script>
+    <script src="/addForm/addForm.component.js"></script>
+  </head>
+  <body>
+    <div ng-app="app">
+      <base href="/">
+      <nav>
+        <ul class=" container nav-group">
+          <li class="list right"><a ng-show="!show" ng-controller="userController" ng-click="login()" class="nav notLogged" href="#"><i class="fab fa-twitter"></i> Log in with twitter</a></li>
+          <li class="list right"><a ng-show="show" ng-controller="userController" class="nav logged" ng-click="logout()" href="#"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+          <li class="list right"><a class="nav both allpins" ui-sref="allpins" ui-sref-active="active">All Pins</a></li>
+          <li class="list right"><a ng-show="show" class="nav logged mypins" ui-sref="mypins" ui-sref-active="active">My Pins</a></li>
+          <li class="absolute right"><a href="#" ng-controller="navbar" class="nav icon" ng-click="nav()">&#9776;</a></li>
+          <li class="left"><a class="nav home" ui-sref="home" ui-sref-active="active">pin place</a></li>
+        </ul>
+      </nav>
+      <div class="view-container">
+        <div ui-view class="view-frame">
+        </div>
+      </div>
+      <footer class="text-center">
+      <div class="row">
+        <div class="col-sm-4">
+          <p><i class="footer fab fa-free-code-camp"></i> Built By <a href="https://www.freecodecamp.org/gurkarn98" target="_blank">@gurkarn98</a></p>
+        </div>
+        <div class="col-sm-4">
+          <p><i class="footer fab fa-twitter-square"></i> Twitter <a href="https://twitter.com/gurkarn98" target="_blank">@gurkarn98</a></p>
+        </div>
+        <div class="col-sm-4">
+          <p><i class="footer fab fa-github"></i> Github <a href="https://github.com/Gurkarn98" target="_blank">@gurkarn98</a></p>
+        </div>
+      </div> 
+      <div class="text-center">
+        <p><i class="footer fab fa-github"></i> Github repo <a href="https://github.com/Gurkarn98/Pin-Place" target="_blank">Gurkarn98/Pin-Place</a></p>
+        <p>Built on <a href="https://glitch.com/~pinplace" target="_blank">glitch.com</a></p>
+      </div>
+    </footer>
+    </div>
+  </body>
+</html>
